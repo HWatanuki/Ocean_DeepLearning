@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>Minha pagina</title>
+    </head>
+    <body>
+        <h1>Nome do meu blog</h1>
+        <ul>
+            {% for entry in entradas %}
+            <li>
+            <h2>{{entry}}</h2>    
+            </li>
+            {% endfor%}
+        </ul>
+    </body>
+</html>

@@ -1,5 +1,5 @@
 import sqlite3
-from flask import Flask, g
+from flask import Flask, g, render_template
 
 DATABASE = "blog.db"
 SECRET_KEY = "pudim"
@@ -22,10 +22,10 @@ def pos_requisicao(exception):
 def exibir_entradas():
     sql = "SELECT titulo, texto FROM entradas ORDER BY id DESC"
     cur = g.bd.execute(sql)
-    entradas = []
+    entradas = [1,2,3,4,5]
     for titulo, texto in cur.fetchall():
         entradas.append({'titulo':titulo, 'texto': texto})
-    return str(entradas)
+    return render_template('exibir_entradas.html', entradas=entradas)
  #   return "olá mundo2 <a href='/pudim'> link</a>"
 
 #@app.route('/pudim')
